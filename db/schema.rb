@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161015231722) do
+ActiveRecord::Schema.define(version: 20161015232022) do
+
+  create_table "answers", force: :cascade do |t|
+    t.integer  "user_id",            limit: 4,     null: false
+    t.text     "user_input",         limit: 65535
+    t.integer  "upload_id",          limit: 4
+    t.integer  "question_option_id", limit: 4
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+  end
+
+  add_index "answers", ["question_option_id"], name: "index_answers_on_question_option_id", using: :btree
+  add_index "answers", ["upload_id"], name: "index_answers_on_upload_id", using: :btree
+  add_index "answers", ["user_id"], name: "index_answers_on_user_id", using: :btree
 
   create_table "field_of_works", force: :cascade do |t|
     t.string   "title",      limit: 255, null: false
@@ -88,6 +101,9 @@ ActiveRecord::Schema.define(version: 20161015231722) do
     t.datetime "updated_at",               null: false
   end
 
+  add_foreign_key "answers", "question_options"
+  add_foreign_key "answers", "uploads"
+  add_foreign_key "answers", "users"
   add_foreign_key "forms", "lawyers"
   add_foreign_key "lawyers", "field_of_works"
   add_foreign_key "question_options", "questions"
