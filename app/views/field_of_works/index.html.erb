@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Field Of Works</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @field_of_works.each do |field_of_work| %>
+      <tr>
+        <td><%= field_of_work.title %></td>
+        <td><%= link_to 'Show', field_of_work %></td>
+        <td><%= link_to 'Edit', edit_field_of_work_path(field_of_work) %></td>
+        <td><%= link_to 'Destroy', field_of_work, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Field of work', new_field_of_work_path %>

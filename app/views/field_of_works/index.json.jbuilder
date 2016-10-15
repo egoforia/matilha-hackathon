@@ -1,0 +1,1 @@
+json.array! @field_of_works, partial: 'field_of_works/field_of_work', as: :field_of_work
