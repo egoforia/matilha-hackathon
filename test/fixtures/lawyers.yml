@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  OAB: MyString
+  name: MyString
+  email: MyString
+  field_of_work_id: 
+
+two:
+  OAB: MyString
+  name: MyString
+  email: MyString
+  field_of_work_id: 
