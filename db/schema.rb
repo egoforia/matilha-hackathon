@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161015225838) do
+ActiveRecord::Schema.define(version: 20161015230812) do
 
   create_table "field_of_works", force: :cascade do |t|
     t.string   "title",      limit: 255, null: false
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20161015225838) do
     t.integer  "jump_logic_question_option_id", limit: 4
     t.datetime "created_at",                                                  null: false
     t.datetime "updated_at",                                                  null: false
+    t.boolean  "jump_logic_if",                 limit: 1
   end
 
   add_index "questions", ["field_type_id"], name: "index_questions_on_field_type_id", using: :btree
