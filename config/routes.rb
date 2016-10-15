@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :field_types
+
   resources :forms
 
   resources :lawyers

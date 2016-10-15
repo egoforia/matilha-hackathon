@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161015224841) do
+ActiveRecord::Schema.define(version: 20161015225044) do
 
   create_table "field_of_works", force: :cascade do |t|
     t.string   "title",      limit: 255, null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "field_types", force: :cascade do |t|
+    t.string   "type",       limit: 255, null: false
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
