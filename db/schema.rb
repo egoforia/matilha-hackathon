@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161015230955) do
+ActiveRecord::Schema.define(version: 20161015231616) do
 
   create_table "field_of_works", force: :cascade do |t|
     t.string   "title",      limit: 255, null: false
@@ -72,6 +72,12 @@ ActiveRecord::Schema.define(version: 20161015230955) do
   add_index "questions", ["form_id"], name: "index_questions_on_form_id", using: :btree
   add_index "questions", ["jump_logic_question_id"], name: "index_questions_on_jump_logic_question_id", using: :btree
   add_index "questions", ["jump_logic_question_option_id"], name: "index_questions_on_jump_logic_question_option_id", using: :btree
+
+  create_table "uploads", force: :cascade do |t|
+    t.string   "file",       limit: 255, null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   add_foreign_key "forms", "lawyers"
   add_foreign_key "lawyers", "field_of_works"
