@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161015230812) do
+ActiveRecord::Schema.define(version: 20161015230955) do
 
   create_table "field_of_works", force: :cascade do |t|
     t.string   "title",      limit: 255, null: false
@@ -62,16 +62,19 @@ ActiveRecord::Schema.define(version: 20161015230812) do
     t.text     "description",                   limit: 65535
     t.text     "law_description",               limit: 65535
     t.integer  "jump_logic_question_option_id", limit: 4
+    t.boolean  "jump_logic_if",                 limit: 1
+    t.integer  "jump_logic_question_id",        limit: 4
     t.datetime "created_at",                                                  null: false
     t.datetime "updated_at",                                                  null: false
-    t.boolean  "jump_logic_if",                 limit: 1
   end
 
   add_index "questions", ["field_type_id"], name: "index_questions_on_field_type_id", using: :btree
   add_index "questions", ["form_id"], name: "index_questions_on_form_id", using: :btree
+  add_index "questions", ["jump_logic_question_id"], name: "index_questions_on_jump_logic_question_id", using: :btree
   add_index "questions", ["jump_logic_question_option_id"], name: "index_questions_on_jump_logic_question_option_id", using: :btree
 
   add_foreign_key "forms", "lawyers"
   add_foreign_key "lawyers", "field_of_works"
   add_foreign_key "question_options", "questions"
+  add_foreign_key "questions", "questions", column: "jump_logic_question_id"
 end
