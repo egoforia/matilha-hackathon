@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161015225641) do
+ActiveRecord::Schema.define(version: 20161015225838) do
 
   create_table "field_of_works", force: :cascade do |t|
     t.string   "title",      limit: 255, null: false
@@ -55,18 +55,20 @@ ActiveRecord::Schema.define(version: 20161015225641) do
   add_index "question_options", ["question_id"], name: "index_question_options_on_question_id", using: :btree
 
   create_table "questions", force: :cascade do |t|
-    t.string   "title",           limit: 255,                   null: false
-    t.integer  "form_id",         limit: 4
-    t.integer  "field_type_id",   limit: 4
-    t.boolean  "is_required",     limit: 1,     default: false, null: false
-    t.text     "description",     limit: 65535
-    t.text     "law_description", limit: 65535
-    t.datetime "created_at",                                    null: false
-    t.datetime "updated_at",                                    null: false
+    t.string   "title",                         limit: 255,                   null: false
+    t.integer  "form_id",                       limit: 4
+    t.integer  "field_type_id",                 limit: 4
+    t.boolean  "is_required",                   limit: 1,     default: false, null: false
+    t.text     "description",                   limit: 65535
+    t.text     "law_description",               limit: 65535
+    t.integer  "jump_logic_question_option_id", limit: 4
+    t.datetime "created_at",                                                  null: false
+    t.datetime "updated_at",                                                  null: false
   end
 
   add_index "questions", ["field_type_id"], name: "index_questions_on_field_type_id", using: :btree
   add_index "questions", ["form_id"], name: "index_questions_on_form_id", using: :btree
+  add_index "questions", ["jump_logic_question_option_id"], name: "index_questions_on_jump_logic_question_option_id", using: :btree
 
   add_foreign_key "forms", "lawyers"
   add_foreign_key "lawyers", "field_of_works"
