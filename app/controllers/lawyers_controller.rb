@@ -1,4 +1,5 @@
 class LawyersController < ApplicationController
+  before_action :authenticate_lawyer!
   before_action :set_lawyer, only: [:show, :edit, :update, :destroy]
 
   # GET /lawyers

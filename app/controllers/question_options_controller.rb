@@ -1,4 +1,5 @@
 class QuestionOptionsController < ApplicationController
+  before_action :authenticate_lawyer!
   before_action :set_question_option, only: [:show, :edit, :update, :destroy]
 
   # GET /question_options

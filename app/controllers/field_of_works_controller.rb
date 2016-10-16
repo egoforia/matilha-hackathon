@@ -1,4 +1,5 @@
 class FieldOfWorksController < ApplicationController
+  before_action :authenticate_lawyer!
   before_action :set_field_of_work, only: [:show, :edit, :update, :destroy]
 
   # GET /field_of_works

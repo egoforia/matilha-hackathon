@@ -1,4 +1,5 @@
 class FieldTypesController < ApplicationController
+  before_action :authenticate_lawyer!
   before_action :set_field_type, only: [:show, :edit, :update, :destroy]
 
   # GET /field_types
