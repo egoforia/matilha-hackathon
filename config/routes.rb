@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'form_user/show'
+
   get 'landing/index'
 
   devise_for :lawyers, controllers: { registrations: 'lawyers/registrations' }
@@ -16,6 +18,10 @@ Rails.application.routes.draw do
 
   resources :forms do
     post 'send_email', to: 'forms#send_email'
+  end
+
+  resources :forms do
+    get 'users/:user_id', to: 'form_user#show'
   end
 
   resources :lawyers

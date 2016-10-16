@@ -124,25 +124,9 @@ jQuery(document).on('ready page:change', function() {
       viewXML: '&lt;/&gt;',
       yes: 'Sim'
   	},
-  	inputSets: [{
-      label: 'Campo de texto',
-      // name: 'customtext', // optional - one will be generated from the label if name not supplied
-      // showHeader: true, // optional - Use the label as the header for this set of inputs
-      fields: [
-        {
-          type: 'text',
-          label: 'Pergunta',
-          className: 'form-control',
-          name: 'aaa',
-          id: 'bbbb',
-          value: 'cccc'
-        }
-      ]
-    }],
     typeUserEvents: {
       'text': {
         onadd: function(fld) {
-          console.log('onadd');
           var i = $('.frmb .form-field').size();
 
           $('label.field-label').html('Pergunta');
@@ -151,6 +135,15 @@ jQuery(document).on('ready page:change', function() {
 
           var type = getTypeId('text');
           $(fld).append("<input type='hidden' name='questions[" + i + "][field_type_id]' value='" + type + "'/>");
+        }
+      },
+      'checkbox-group': {
+        onadd: function(fld) {
+          var i = $('.frmb .form-field').size();
+          $('label.field-label').html('Pergunta');
+
+
+          '<input type="text" class="form-control" name="questions[4][title]">'
         }
       }
     }
