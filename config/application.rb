@@ -31,5 +31,14 @@ module MatilhaHackathon
       :s3_host_name => "s3-#{ENV['AWS_REGION']}.amazonaws.com/elasticbeanstalk-sa-east-1-351157937170",
       :bucket => ENV['S3_BUCKET_NAME']
     }
+
+    ActionMailer::Base.smtp_settings = {
+      :address => "smtp.sendgrid.net",
+      :port => 25,
+      :domain => "nicestart.com",
+      :authentication => :plain,
+      :user_name => ENV["SENDGRID_USERNAME"],
+      :password => ENV["SENDGRID_PASSWORD"]
+    }
   end
 end
