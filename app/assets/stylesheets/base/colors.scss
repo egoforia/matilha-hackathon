@@ -1,23 +1,26 @@
 // 
 // project colors
 
-// $purple:		#674D9B;
-// $yellow:		#EFAF56;
-// $cyan:			#52C2E9;
+$purple:		#674D9B;
+$yellow:		#EFAF56;
+$blue:			#1E7BE2;
+$navy-blue:	#44678C;
 // $green:			#57BE96;
-// $orange:		#F05A29;
-// $red:				#EC185B;
-// $light-bg:	#F8F6FA;
+$green:			#38BA72;
+$orange:		#F05A29;
+$red:				#EC185B;
+$light-bg:	#F3F9FF;
+$dark-bg:		#33455A;
 
-// $primary-color:			$purple !default;
-// $secondary-color:		$yellow !default;
+$text-color:#617283;
 
-// $border-color: lighten($primary-color, 50%);
 
-// $error-color: #F02929;
+$primary-color:			$purple !default;
+$secondary-color:		$yellow !default;
 
-// // ingresso_areas
-// $nv0-color: #EFAF56;
-// $nv1-color: #EC185B;
-// $nv2-color: #52C2E9;
-// $nv3-color: #F05A29;
+$brand-primary: 		$blue !important;
+$brand-secondary: 	$green !important;
+
+$brand-success: 		$green !important;
+$brand-warning: 		$orange !important;
+$brand-error: 			$red !important;

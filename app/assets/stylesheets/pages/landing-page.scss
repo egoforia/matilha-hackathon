@@ -1,6 +1,254 @@
 // 
 // landing page styles
 
-body {
-	// background: #000;
-}
+
+// 
+// general
+
+	body {
+		// background: #000;
+	}
+
+// 
+// header
+	
+	.logotype {
+		width: 170px;
+		height: 39px;
+		background: url('/assets/logotype-horizontal.svg') no-repeat center;
+		background-size: 100%;
+		display: inline-block;
+		text-indent: -999999px;
+		margin-top: 20px;
+
+		@include breakpoint(xs)  { 
+			margin: 0 auto;
+			display: block;
+		}
+	}
+
+	.main-nav.nav-pills {
+		margin: 80px 0 0 0;
+		padding: 0;
+		z-index: 2;
+		position: relative;
+	}
+	
+	.main-nav.nav-pills li {
+		list-style: none;
+	}
+
+	.main-nav.nav-pills li a {
+		color: #fff;
+		font-size: 16px;
+		margin-left: 5px;
+		border-radius: 50px;
+		padding: 13px 30px;
+
+		@extend .transition--fast;
+
+		&:hover {
+			background: rgba(0,0,0,0.15);
+		}
+
+		@include breakpoint(xs)  { display: none; &.btn {display: block;} }
+		@include breakpoint(sm)  { display: none; &.btn {display: block;} }
+		@include breakpoint(md)  { display: none; &.btn {display: block;} }
+	}
+
+	.main-header .nav-pills li a.btn {
+		color: $navy-blue;
+		font-size: 16px;
+		margin-top: 0px;
+		margin-left: 15px;
+
+		@extend .transition--fast;
+
+		&:hover {
+			background: #fff;
+			color: $blue;
+		}
+
+		@include breakpoint(xs)  { display: block !important; }
+		@include breakpoint(sm)  { display: block !important; }
+		@include breakpoint(md)  { display: block !important; }
+	}
+
+// 
+// hero 
+	.hero-block-wrapper {
+		min-height: 550px;
+		position: relative;
+	}
+
+	.hero__content {
+		padding-top: 70px;
+
+		@include breakpoint(xs)  { 
+			text-align: center;
+		}
+	}
+	
+	.hero__title {
+		margin-top: 50px;
+		font-size: 32px;
+		font-weight: bold;
+		color: $blue;
+	}
+
+	.hero__tagline {
+		font-size: 19px;
+		color: $text-color;
+		line-height: 35px;
+	}
+
+	.hero__cta {
+		margin-top: 20px;
+	}
+
+	.hero__image {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 55%;
+		height: 550px;
+		z-index: 0;
+
+		@include breakpoint(xs)  { display: none; }
+		@include breakpoint(sm)  { display: none; }
+		@include breakpoint(md)  { width: 50%; }
+
+		img {
+			// position: absolute;
+			// top:0;
+			// left: 0;
+			// width: 100%;
+			// height: auto;
+		}
+	}
+
+
+// 
+// features
+	.features-block-wrapper {
+		background: $light-bg;
+		padding: 70px 0;
+	}
+
+	.feature__block {
+		@include breakpoint(xs)  { margin-bottom: 40px; }
+	}
+
+// 
+// screenshots
+	.screenshots-block-wrapper {
+		background: $dark-bg;
+		color: #fff !important;
+		padding: 70px 0;
+	}
+
+	.screenshot-block__title {}
+	.screenshot-block__text {
+		color: rgba(255,255,255,0.8);
+		font-size: 19px;
+		line-height: 170%;
+	}
+
+	.screenshot-block__cta {
+		margin-top: 20px;
+		margin-bottom: 10px;
+	}
+
+	.screenshot-block__note {
+		color: rgba(255,255,255,0.4);
+	}
+
+
+// 
+// footer 
+	.main-footer {
+		padding: 70px 0;
+	}
+	
+	.main-footer h4 { margin-bottom: 20px; 
+		@include breakpoint(xs)  { 
+			margin: 0 auto 20px; 
+			text-align: center;
+		}
+	}
+
+
+	.logotype-symbol {
+		width: 48px;
+		height: 39px;
+		background: url('/assets/logotype-symbol.svg') no-repeat center;
+		background-size: 100%;
+		display: inline-block;
+		text-indent: -999999px;
+		margin-top: 20px;
+		margin-bottom: 20px;
+
+		@include breakpoint(xs)  { 
+			margin: 20px auto; 
+			text-align: center;
+		}
+	}
+
+	.powered-by {
+		font-size: 14px;
+	}
+
+	.logotype-matilha {
+		width: 100px;
+		height: 48px;
+		background: url('/assets/logotype-complete-filled.svg') no-repeat center;
+		background-size: 100%;
+		display: inline-block;
+		text-indent: -99999999px;
+		margin-bottom: 10px;
+
+		@include breakpoint(xs)  { 
+			margin: 20px auto 0; 
+			text-align: center;
+		}
+
+	}
+
+
+	.social-networks-wrapper {
+		margin: 0;
+		padding: 0;
+
+		@include breakpoint(xs)  { 
+			margin: 0 auto; 
+			text-align: center;
+		}
+	}
+	
+	.social-networks-wrapper li {
+		list-style: none;
+		margin-bottom: 10px;
+	}
+
+	.social-networks-wrapper li a {
+		font-size: 18px;
+		font-weight: 500;
+		padding: 15px 0;
+
+		i {
+			width: 20px;
+		}
+	}
+
+	.contact-block-wrapper {
+		@include breakpoint(xs)  { 
+			margin: 0 auto; 
+			text-align: center;
+		}
+	}
+
+	.address-block-wrapper {
+		font-size: 16px;
+		color: $text-color;
+	}
+		

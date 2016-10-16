@@ -1,2 +1,19 @@
 // 
 // buttons
+
+	.btn {
+		border-radius: 50px !important;
+		border: none !important;
+		color: #fff !important;
+		padding: 13px 30px !important;
+
+		@extend .transition--fast;
+	}
+
+	.btn.btn-primary {
+		background: $blue !important;
+
+		&:hover {
+			background: $green !important;
+		}
+	}

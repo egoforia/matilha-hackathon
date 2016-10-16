@@ -8,30 +8,35 @@
 </head>
 <body>
 
-<header class="main-header bg-info">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-3">
-				<h1><a href="/" class="logotype">Nice Start</a></h1>
-			</div>
-			<div class="col-xs-9 text-right">
-				<ul class="nav nav-pills pull-right">
-				  <li role="presentation"><a href="#">como funciona</a></li>
-				  <li role="presentation"><a href="#">preço</a></li>
-				  <li role="presentation"><a href="/lawyers/sign_in">acessar painel</a></li>
-				  <li role="presentation"><a href="/lawyers/sign_up" class="btn btn-primary">crie sua conta</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</header>
-
 <%= yield %>
 
 <footer class="main-footer">
 	<div class="container">
-		<div class="row text-center">
-			<div class="col-xs-12"> Nice Start ® 2016</div>
+		<div class="row">
+			<div class="col-xs-12 col-md-4">
+				<h4>Redes sociais</h4>
+				<ul class="social-networks-wrapper">
+					<li><a href="#"><i class="fa fa-facebook"></i> Facebook</a></li>
+					<li><a href="#"><i class="fa fa-angellist"></i> Angel List</a></li>
+				</ul>
+			</div>
+
+			<div class="col-xs-12 col-md-4 text-center">
+				<a href="/" class="logotype-symbol">Nice Start</a>
+			</div>
+			<div class="col-xs-12 col-md-4 text-right contact-block-wrapper">
+
+				<a href="http://matilha.digital" title="Um produto feito pelo MATILHA" target="_blank" class="logotype-matilha"></a>
+				<!-- <p class="powered-by">Um produto feito pelo MATILHA.</p> -->
+				<address class="address-block-wrapper">
+				  Rua Schiller, 1797<br>
+				  Hugo Lange, Curitiba, Paraná<br>
+				  +55 41 3114-2772 <br>
+					nicestart@matilha.digital
+				</address>
+
+			</div>
+
 		</div>
 	</div>
 </footer>
