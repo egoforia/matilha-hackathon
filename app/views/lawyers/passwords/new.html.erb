@@ -1,5 +1,10 @@
-<h2 class="text-center">Esqueceu sua senha?</h2>
-<br>
+
+<a href="/" class="logotype center">Nice Start</a>
+
+<hr>
+
+<h3 class="text-center">Recuperar senha</h3>
+
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
 

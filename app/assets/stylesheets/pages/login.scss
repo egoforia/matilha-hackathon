@@ -1,0 +1,38 @@
+// 
+// login styles
+
+// general
+	.dashboard.registrations.new, .dashboard.sessions.new, .dashboard.passwords.new {
+		background: $light-bg !important;
+	}
+
+	.login-block-wrapper {
+		margin-top: 50px;
+		margin-bottom: 50px;
+		padding: 30px;
+		background: #fff;
+		border-radius: 3px;
+	}
+
+	.login-block-wrapper .logotype {
+		margin: 20px auto 40px;
+	}
+
+
+// signup
+	.dashboard.registrations.new {
+
+	}
+
+// login
+	.dashboard.sessions.new {
+
+	}
+
+// forgot password
+	.dashboard.password.new {
+
+	}
+
+
+

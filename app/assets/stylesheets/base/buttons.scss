@@ -17,3 +17,15 @@
 			background: $green !important;
 		}
 	}
+
+	.btn.btn-default {
+		background: #fff !important;
+		border: 1px solid #E0E0E0 !important;
+		color: $blue !important;
+		font-weight: 500;
+
+		&:hover {
+			border: 1px solid $blue !important;
+			background: lighten($blue, 47%) !important;
+		}
+	}

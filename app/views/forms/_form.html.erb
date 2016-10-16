@@ -24,15 +24,21 @@
 </script>
 
 <%= form_for(@form) do |f| %>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
 
   <div class="row">
+    <div class="col-xs-12 col-md-4">
+      <div class="form-group">
+        <%= f.label "Nome do formulário" %><br>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="col-xs-12">
+      <hr>
+    </div>
     <div class="col-sm-3">
-      <h3>Adicionar campos</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3 class="text-center">Adicionar campos</h3>
+      <p class="text-center">Clique nos tipos de campos que você deseja adicionar no formulário</p>
+      <p class="text-center"><i class="fa fa-angle-down"></i></p>
     </div>
     <div class="col-sm-9">
       <h3>Formulário de perguntas</h3>

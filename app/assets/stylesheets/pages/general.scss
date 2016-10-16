@@ -1,0 +1,32 @@
+// 
+// general styles
+
+// logotype
+	.logotype {
+		width: 170px;
+		height: 39px;
+		background: url('/assets/logotype-horizontal.svg') no-repeat center;
+		background-size: 100%;
+		display: inline-block;
+		text-indent: -999999px;
+		margin-top: 20px;
+
+		@include breakpoint(xs)  { 
+			margin: 0 auto;
+			display: block;
+		}
+
+		&.center {
+			margin: 0 auto;
+			display: block;
+		}
+	}
+
+// dashboard header
+	.main-header {
+		background: $light-bg;
+		padding: 25px 0;
+	}
+	.main-header .logotype {
+		margin: 0;
+	}
