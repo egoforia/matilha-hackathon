@@ -1,7 +1,7 @@
 // 
 // buttons
 
-	.btn {
+	.btn:not(.copy-button):not(.toggle-form):not(.del-button) {
 		border-radius: 50px !important;
 		border: none !important;
 		color: #fff !important;
@@ -18,7 +18,7 @@
 		}
 	}
 
-	.btn.btn-default {
+	.btn.btn-default:not(.copy-button):not(.toggle-form):not(.del-button) {
 		background: #fff !important;
 		border: 1px solid #E0E0E0 !important;
 		color: $blue !important;
