@@ -56,8 +56,15 @@ class FormsController < ApplicationController
     respond_to do |format|
       if @form.update(form_params)
         params[:questions].each do |i, question_param|
-          question = Question.find question_param[:id]
-          question.update_attributes(questions_params(i).except(:id))
+          if question_param.has_key? :id
+            question = Question.find question_param[:id]
+            question.update_attributes(questions_params(i).except(:id))
+          else
+            question = Question.new
+            question.form = @form
+            question.assign_attributes(questions_params(i))
+            question.save
+          end
         end
 
         format.html { redirect_to @form, notice: 'Form was successfully updated.' }
