@@ -1,6 +1,21 @@
 // 
 // general elements
 
+
+#frmb-0-view-data {
+	display: none;
+}
+
+#frmb-0-save {
+	float: right;
+}
+
+.frmb-control li {display: none;}
+
+.icon-checkbox-group, .icon-text-input {
+	display: block !important;
+}
+
 // 
 // table
 	.table {
