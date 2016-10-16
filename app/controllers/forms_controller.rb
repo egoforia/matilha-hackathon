@@ -16,10 +16,12 @@ class FormsController < ApplicationController
   # GET /forms/new
   def new
     @form = Form.new
+    @types = FieldType.all
   end
 
   # GET /forms/1/edit
   def edit
+    @types = FieldType.all
   end
 
   # POST /forms
@@ -27,8 +29,18 @@ class FormsController < ApplicationController
   def create
     @form = Form.new(form_params)
 
+    @form.lawyer = current_lawyer
+
     respond_to do |format|
       if @form.save
+
+        params[:questions].each do |i, question_param|
+          question = Question.new
+          question.form = @form
+          question.assign_attributes(questions_params(i))
+          question.save
+        end
+
         format.html { redirect_to @form, notice: 'Form was successfully created.' }
         format.json { render :show, status: :created, location: @form }
       else
@@ -91,5 +103,10 @@ class FormsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:name, :email)
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def questions_params(i)
+      params.require(:questions).require(i.to_s.to_sym).permit(:title, :field_type_id)
     end
 end

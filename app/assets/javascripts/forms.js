@@ -4,7 +4,11 @@ jQuery(document).on('ready page:load', function() {
 	// init formBuilder plugin
   $('#formBuilder').formBuilder({
   	controlPosition: 'left',
-  	editOnAdd: true,
+  	// editOnAdd: true,
+    sortableControls: false,
+    disableFields: [
+      'button'
+    ],
   	messages: {
   		button: 'Botão',
       text: 'Texto',
@@ -121,54 +125,39 @@ jQuery(document).on('ready page:load', function() {
       yes: 'Sim'
   	},
   	inputSets: [{
-      label: 'Dados de Contato',
-      name: 'user-details', // optional - one will be generated from the label if name not supplied
-      showHeader: true, // optional - Use the label as the header for this set of inputs
+      label: 'Campo de texto',
+      // name: 'customtext', // optional - one will be generated from the label if name not supplied
+      // showHeader: true, // optional - Use the label as the header for this set of inputs
       fields: [
-          {
-            type: 'text',
-            label: 'Nome',
-            className: 'form-control'
-          },{
-            type: 'text',
-            label: 'Sobrenome',
-            className: 'form-control'
-          },
-          {
-            type: 'text',
-            label: 'Profissão',
-            className: 'form-control'
-          },
-          {
-            type: 'text',
-            label: 'Endereço completo:',
-            className: 'form-control'
-          }
+        {
+          type: 'text',
+          label: 'Pergunta',
+          className: 'form-control',
+          name: 'aaa',
+          id: 'bbbb',
+          value: 'cccc'
+        }
       ]
-    },
-    {
-      label: 'User Agreement',
-      fields: [
-      {
-        type: 'header',
-        subtype: 'h2',
-        label: 'Terms &amp; Conditions',
-        className: 'header'
-      },
-      {
-        type: 'paragraph',
-        label: 'Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.',
-      },
-      {
-        type: 'paragraph',
-        label: 'Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.',
-      },
-      {
-        type: 'checkbox',
-        label: 'Do you agree to the terms and conditions?',
+    }],
+    typeUserEvents: {
+      'text': {
+        onadd: function(fld) {
+          var i = $('.frmb .form-field').size();
+
+          $('label.field-label').html('Pergunta');
+
+          $('.prev-holder input[type=text]', fld).attr('name', 'questions[' + i + '][title]');
+
+          var type = getTypeId('text');
+          $(fld).append("<input type='hidden' name='questions[" + i + "][field_type_id]' value='" + type + "'/>");
+        }
       }
-    ]
-    }]
+    },
+    defaultFields: [questionsAsDefault()]
+  });
+
+  $('button.form-builder-save').on('click', function() {
+    $('form').submit();
   });
 
 });

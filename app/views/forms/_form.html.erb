@@ -1,4 +1,34 @@
+<script type="text/javascript">
+  var types = <%= raw @types.to_json %>;
+  var getTypeId = function(type) {
+    for (var i in types)
+      if (types[i].title == type)
+        return types[i].id;
+  };
+  var questions = <%= raw @form.questions.to_json %>;
+
+  var questionsAsDefault = function() {
+    var defaults = []
+
+    for (var i in questions) {
+      var question = questions[i];
+
+      defaults.push({
+        label: "Pergunta",
+        name: 'questions[' + i + '][title]',
+        type: "text",
+        value: question.title
+      });
+    }
+  };
+</script>
+
 <%= form_for(@form) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+
   <div class="row">
     <div class="col-sm-3">
       <h3>Adicionar campos</h3>
@@ -24,10 +54,6 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%#= f.label :name %><br>
-    <%#= f.text_field :name %>
-  </div>
   <div class="field">
     <%#= f.label :lawyer_id %><br>
     <%#= f.text_field :lawyer_id %>
