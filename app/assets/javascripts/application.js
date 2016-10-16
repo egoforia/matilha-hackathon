@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require bootstrap-sprockets
-//= require turbolinks
 //= require form-builder.js
 //= require form-render.js
 //= require jquery.noty.packaged.js
