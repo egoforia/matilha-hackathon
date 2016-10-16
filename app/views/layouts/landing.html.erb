@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Nice Start</title>
+  <%= stylesheet_link_tag    'landing', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'landing', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<header class="main-header bg-info">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-3">
+				<h1><a href="/" class="logotype">Nice Start</a></h1>
+			</div>
+			<div class="col-xs-9 text-right">
+				<ul class="nav nav-pills pull-right">
+				  <li role="presentation"><a href="#">como funciona</a></li>
+				  <li role="presentation"><a href="#">preço</a></li>
+				  <li role="presentation"><a href="/lawyers/sign_in">acessar painel</a></li>
+				  <li role="presentation"><a href="/lawyers/sign_up" class="btn btn-primary">crie sua conta</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</header>
+
+<%= yield %>
+
+<footer class="main-footer">
+	<div class="container">
+		<div class="row text-center">
+			<div class="col-xs-12"> Nice Start ® 2016</div>
+		</div>
+	</div>
+</footer>
+</body>
+</html>
