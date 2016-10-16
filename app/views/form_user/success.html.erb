@@ -35,7 +35,24 @@
 	<div class="col-xs-12 text-center">
 		<h3>Respostas para formulário de Direito Trabalhista</h3>
 	</div>
-	<div class="col-xs-12 form-question-block">	
+
+	<% @user.answers.group(:question_id).each do |answers| %>
+		<div class="col-xs-12 form-question-block">	
+			<div class="form-group">
+				<label class="form-question__title" for="questionOne"><%= answers.question.title %></label>
+
+				<% if answers.question.field_type.is_text? %>
+		    		<strong class="form-question__answer"><%= answers.user_input %></strong>
+		    	<% elsif answers.question.field_type.is_select? %>
+		    		<strong class="form-question__answer">
+			    		<%= Answer.where(question_id: answers.question.id, user_id: answers.user.id).map {|answer| answer.question_option.title} .join(', ') %>
+			    	</strong>
+		    	<% end %>
+			</div>
+		</div>
+	<% end %>
+
+	<!-- <div class="col-xs-12 form-question-block">	
 		<div class="form-group">
 			<label class="form-question__title" for="questionOne">Qual é seu nome completo?</label>
 	    <strong class="form-question__answer">José da Silva Perreira Utko</strong>
@@ -85,7 +102,7 @@
 			<label class="form-question__title" for="questionOne">Qual é o nome da empresa onde você trabalhava/trabalha?</label>
 	    <strong class="form-question__answer">HSBC Seguros</strong>
 		</div>
-	</div>
+	</div> -->
 </div>
 
 <br clear="both">
