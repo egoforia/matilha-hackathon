@@ -143,7 +143,23 @@ jQuery(document).on('ready page:change', function() {
           $('label.field-label').html('Pergunta');
 
 
-          '<input type="text" class="form-control" name="questions[4][title]">'
+          $('.prev-holder', fld).before('<input type="text" class="form-control" name="questions[' + i + '][title]">');
+
+          $('input[type=text].option-label', fld).each(function(j) {
+            $(this).attr('name', 'questions[' + i + '][question_options][' + j + '][title]');
+          });
+
+          var type = getTypeId('select');
+          $(fld).append("<input type='hidden' name='questions[" + i + "][field_type_id]' value='" + type + "'/>");
+
+          // $('a.add-opt', fld).on('click', function() {
+          //   console.log('click');
+          // });
+
+          // $('.option-selected, .option-value, .option-label').on('change', function() {
+          //   console.log('teste');
+          //   $('input[type=checkbox].checkbox-group', fld).attr('name', 'questions[' + i + '][question_options][][title]');              
+          // });
         }
       }
     }
@@ -162,6 +178,12 @@ jQuery(document).on('ready page:change', function() {
         $('.icon-text-input').click();
 
         $('.prev-holder input[type=text]').last().val(question.title);
+      }
+
+      if (question.field_type_id == 2) {
+        $('.icon-checkbox-group').click();
+
+        $('.checkbox-group-field').last().find('input[type=text][name*="[title]"]').first().val(question.title);
       }
 
       $('ul.frmb .form-field').last().append("<input type='hidden' name='questions[" + i + "][id]' value='" + question.id + "' />");  
