@@ -8,9 +8,6 @@ class FormUserController < ApplicationController
   def create
     @form.questions.each do |question|
       begin
-        puts "#{question_params(question.id).inspect}"
-        puts "#{question_params(question.id).has_key? :user_input}"
-        puts "#{question_params(question.id).has_key? :question_option_id}"
         if question_params(question.id).has_key? :user_input
           answer = Answer.new
           answer.user = @user
@@ -19,7 +16,6 @@ class FormUserController < ApplicationController
           answer.save
         elsif question_params(question.id).has_key? :question_option_id
            question_params(question.id)[:question_option_id].each do |question_option_id|
-            puts "question_option_id: #{question_option_id}"
             answer = Answer.new
             answer.user = @user
             answer.question = question
