@@ -24,5 +24,12 @@ module MatilhaHackathon
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.paperclip_defaults = {
+      :storage => :s3,
+      :s3_region => ENV['AWS_REGION'],
+      :s3_host_name => "s3-#{ENV['AWS_REGION']}.amazonaws.com/elasticbeanstalk-sa-east-1-351157937170",
+      :bucket => ENV['S3_BUCKET_NAME']
+    }
   end
 end
