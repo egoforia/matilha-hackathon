@@ -19,13 +19,9 @@ jQuery(document).on('ready page:change', function() {
 		  }
 		};
 		var source = window.document.getElementsByTagName("body")[0];
-		doc.fromHTML(
-		    source,
-		    15,
-		    15,
-		    {
-		      'width': 180,'elementHandlers': elementHandler
-		    });
+		doc.fromHTML( source, 12, 12,{
+	    'width': 140,'elementHandlers': elementHandler
+		});
 
 		doc.output("dataurlnewwindow");
 	});
