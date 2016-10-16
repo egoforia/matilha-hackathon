@@ -56,6 +56,7 @@ class FormsController < ApplicationController
     respond_to do |format|
       if @form.update(form_params)
         params[:questions].each do |i, question_param|
+          question = nil
           if question_param.has_key? :id
             question = Question.find question_param[:id]
             question.update_attributes(questions_params(i).except(:id))
@@ -64,6 +65,15 @@ class FormsController < ApplicationController
             question.form = @form
             question.assign_attributes(questions_params(i))
             question.save
+          end
+
+          if params[:questions][i].has_key? :question_options
+            params[:questions][i][:question_options].each do |j, question_option_param|
+              question_option = QuestionOption.new
+              question_option.question = question
+              question_option.assign_attributes(question_options_params(i, j))
+              question_option.save
+            end
           end
         end
 
@@ -120,5 +130,10 @@ class FormsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def questions_params(i)
       params.require(:questions).require(i.to_s.to_sym).permit(:id, :title, :field_type_id)
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def question_options_params(i, j)
+      params.require(:questions).require(i.to_s.to_sym).require(:question_options).require(j.to_s.to_sym).permit(:id, :title)
     end
 end

@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   resources :forms do
     get 'users/:user_id', to: 'form_user#show'
     get 'users/:user_id/sucesso', to: 'form_user#success'
+    get 'users/:user_id', to: 'form_user#show', as: :user
   end
 
   resources :lawyers

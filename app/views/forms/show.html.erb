@@ -47,26 +47,17 @@
     		<div class="col-xs-12">
 		      <table class="table table-hover">
 		        <tbody>
-              <%# @form.users.each do |user| %>
+              <% @form.users.each do |user| %>
                 <tr>
                   <td>
-                    <%#= link_to user.name, form, class: 'text-md' %>
-                    <p>Formulário que qualifica clientes que fizeram primeiro contato com o escritório</p>
+                    <%= link_to user.name, form_user_path(@form, user), class: 'text-md' %>
+                    <!-- <p>Formulário que qualifica clientes que fizeram primeiro contato com o escritório</p> -->
                   </td>
-                  <td class="text-right"><%#= link_to 'Ver formulário', form, class: 'btn btn-default' %></td>
+                  <td class="text-right"><%= link_to 'Ver formulário', form_user_path(@form, user), class: 'btn btn-default' %></td>
                   <!-- <td><%#= link_to 'Edit', edit_form_path(form) %></td> -->
                   <!-- <td><%#= link_to 'Destroy', form, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
                 </tr>
-              <%# end %>
-		        	<tr>
-		        		<td>
-		        			<a href="" class="text-md">Maria da Silva Ribeiro</a>
-		        			<p>maria@live.com</p>
-		        		</td>
-		        		<td class="text-right">
-		        			<a href="#" class="btn btn-default">ver resposta</a>
-		        		</td>
-	        		</tr>
+              <% end %>
 		        </tbody>
 		      </table>
     		</div>
