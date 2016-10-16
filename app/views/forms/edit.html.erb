@@ -11,7 +11,7 @@
           <h1><%= @form.name %></h1>
         </div>
         <div class="col-xs-6 text-right">
-          <%= link_to 'Salvar & Visualizar', new_form_path, class: 'btn btn-default' %>
+          <%= link_to 'Salvar & Visualizar', @form, class: 'btn btn-default' %>
           <%= link_to 'Salvar', new_form_path, class: 'btn btn-primary' %>
         </div>
       </div>
@@ -23,10 +23,3 @@
 
   </div>
 </div>
-
-<h1>Editing Form</h1>
-
-
-
-<%= link_to 'Show', @form %> |
-<%= link_to 'Back', forms_path %>
