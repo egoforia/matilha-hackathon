@@ -19,4 +19,6 @@
 //= require jquery.noty.packaged.js
 //= require fileinput.js
 //= require fileinput-pt-BR.js
+//= require jspdf.min.js
+//= require from_html.js
 //= require_tree .
