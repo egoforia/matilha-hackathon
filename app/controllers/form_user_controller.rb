@@ -1,7 +1,11 @@
 class FormUserController < ApplicationController
 	before_action :set_form, :set_user
   layout 'front-form'
+
   def show
+  end
+
+  def success
   end
 
   private

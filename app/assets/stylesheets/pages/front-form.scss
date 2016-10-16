@@ -23,6 +23,67 @@
 		font-size: 19px;
 		color: $text-color;
 	}
+
+	// form success header
+	.form-success-header-wrapper {
+		text-align: center !important;
+		margin-bottom: 40px;
+	}
+
+	.form-success-header-wrapper .form-header__title {
+		font-size: 32px;
+		color: $green;
+		display: block;
+	}
+
+	.form-success-header-wrapper .form-header__icon {
+		font-size: 40px;
+		color: $green;
+	}
+
+	.form-success-header-wrapper .form-header__description {
+		display: block;
+		font-size: 19px;
+		color: $text-color;
+	}
+	
+	.form-result-actions-wrapper {
+	}
+
+	.form-result-actions  {
+		font-size: 40px;
+		color: $blue;
+		text-align: center !important;
+		display: block;
+		text-decoration: none;
+
+		@include breakpoint(xs)  {
+			margin-bottom: 40px;
+		}
+
+		@extend .transition--fast;
+
+		span {
+			color: $text-color;
+			font-size: 15px !important;
+			display: block;
+			text-decoration: none;
+		}
+
+		&:hover {
+			color: $green;
+			span { color: $text-color; }
+		}
+	}
+
+	.form-download-pdf {
+		
+	}
+
+	.form-question-answered-wrapper {
+		display: none;
+		margin-bottom: 40px;
+	}
 	
 	// questions
 	.form-question-block {
@@ -34,6 +95,14 @@
 		font-weight: normal;
 		color: $navy-blue;
 	}
+	
+	.form-question__answer {
+		font-size: 22px;
+		font-weight: 500;
+		color: $blue;
+		display: block;
+	}
+
 	
 	.form-question__description {
 		font-size: 16px;
