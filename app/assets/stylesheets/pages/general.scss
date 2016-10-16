@@ -22,11 +22,53 @@
 		}
 	}
 
+	.logotype-symbol {
+		width: 48px;
+		height: 39px;
+		background: url('/assets/logotype-symbol.svg') no-repeat center;
+		background-size: 100%;
+		display: inline-block;
+		text-indent: -999999px;
+		margin-top: 20px;
+		margin-bottom: 20px;
+
+		@include breakpoint(xs)  { 
+			margin: 20px auto; 
+			text-align: center;
+		}
+
+		&.center {
+			margin: 0 auto;
+			display: block;
+		}
+	}
+
 // dashboard header
 	.main-header {
 		background: $light-bg;
 		padding: 25px 0;
 	}
+
 	.main-header .logotype {
 		margin: 0;
+	}
+
+	.page-back-link {
+		position: relative;
+		margin-top: 30px;
+		display: block;
+
+		&:before {
+			position: absolute;
+			left: -15px;
+			font-size: 20px;
+
+			@extend .fa;	
+			@extend .fa-angle-left;	
+		}
+	}
+
+// body content
+	.body-content-wrapper {
+		min-height: 500px;
 	}

@@ -18,7 +18,7 @@
           <% @forms.each do |form| %>
             <tr>
               <td>
-                <%= link_to form.name, form %>
+                <%= link_to form.name, form, class: 'text-md' %>
                 <p>Formulário que qualifica clientes que fizeram primeiro contato com o escritório</p>
               </td>
               <td class="text-right"><%= link_to 'Ver formulário', form, class: 'btn btn-default' %></td>
