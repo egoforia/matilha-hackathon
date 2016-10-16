@@ -1,7 +1,6 @@
-console.log('yo 1!');
 jQuery(document).on('ready page:load', function() {
   'use strict';
-  
+
 	// init formBuilder plugin
   $('#formBuilder').formBuilder({
   	controlPosition: 'left',
@@ -171,6 +170,5 @@ jQuery(document).on('ready page:load', function() {
     ]
     }]
   });
-	console.log('yo!');
 
 });

@@ -18,5 +18,5 @@
 //= require form-builder.js
 //= require form-render.js
 //= require jquery.noty.packaged.js
-//= require noty-bootstrap.js
+//= require forms
 //= require_tree .

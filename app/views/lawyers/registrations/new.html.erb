@@ -1,44 +1,47 @@
-<h2>Sign up</h2>
+<h2 class="text-center">Nice Start</h2>
+
+<h4>Cria conta</h4>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :name, 'Nome' %><br />
-    <%= f.text_field :name, autofocus: true %>
+    <%= f.text_field :name, autofocus: true, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :OAB, 'OAB' %><br />
-    <%= f.text_field :OAB %>
+    <%= f.text_field :OAB, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :field_of_work_id, 'Área de atuação' %><br />
-    <%= f.collection_select :field_of_work_id, FieldOfWork.all, :id, :title, {prompt: 'Escolha sua área de atuação'} %>
+    <%= f.collection_select :field_of_work_id, FieldOfWork.all, :id, :title, {prompt: 'Escolha sua área de atuação'}, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email %>
+  <div class="form-group">
+    <%= f.label "E-mail" %><br />
+    <%= f.email_field :email, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
+  <div class="form-group">
+    <%= f.label "Senha" %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(no mínimo <%= @minimum_password_length %> caracteres)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  <div class="form-group">
+    <%= f.label "Confirme sua senha" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Criar conta", class: 'btn btn-block btn-primary' %>
   </div>
 <% end %>
-
+<hr>
+<p class="text-center">Já possui uma conta?</p>
 <%= render "lawyers/shared/links" %>
