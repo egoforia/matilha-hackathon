@@ -1,6 +1,32 @@
+<div class="container">
+  <div class="row">
+		
+		<div class="col-xs-12">
+      <%= link_to 'voltar para lista de formulários', forms_path, class: "page-back-link" %>
+    </div>
+
+    <div class="col-xs-12 page-header">
+      <div class="row">
+        <div class="col-xs-6">
+          <h1><%= @form.name %></h1>
+        </div>
+        <div class="col-xs-6 text-right">
+          <%= link_to 'Salvar & Visualizar', new_form_path, class: 'btn btn-default' %>
+          <%= link_to 'Salvar', new_form_path, class: 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12">
+			<%= render 'form' %>      
+    </div>
+
+  </div>
+</div>
+
 <h1>Editing Form</h1>
 
-<%= render 'form' %>
+
 
 <%= link_to 'Show', @form %> |
 <%= link_to 'Back', forms_path %>

@@ -37,17 +37,14 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.3)
-<<<<<<< HEAD
     autoprefixer-rails (6.5.1)
       execjs
-=======
     aws-sdk (2.2.24)
       aws-sdk-resources (= 2.2.24)
     aws-sdk-core (2.2.24)
       jmespath (~> 1.0)
     aws-sdk-resources (2.2.24)
       aws-sdk-core (= 2.2.24)
->>>>>>> e975e1bdbdd00c477b79e1bf2f77d8d8ec589ff0
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -189,19 +186,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-<<<<<<< HEAD
+  aws-sdk
   bootstrap-sass (~> 3.3.6)
   byebug
   coffee-rails (~> 4.1.0)
   devise
-  font-awesome-sass
-=======
-  aws-sdk
-  byebug
-  coffee-rails (~> 4.1.0)
-  devise
   dotenv-rails
->>>>>>> e975e1bdbdd00c477b79e1bf2f77d8d8ec589ff0
+  font-awesome-sass
   jbuilder (~> 2.0)
   jquery-rails
   mysql2 (= 0.3.20)
