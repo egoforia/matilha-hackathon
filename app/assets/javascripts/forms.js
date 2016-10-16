@@ -1,4 +1,4 @@
-jQuery(document).on('ready page:load', function() {
+jQuery(document).on('ready page:change', function() {
   'use strict';
 
 	// init formBuilder plugin
@@ -142,6 +142,7 @@ jQuery(document).on('ready page:load', function() {
     typeUserEvents: {
       'text': {
         onadd: function(fld) {
+          console.log('onadd');
           var i = $('.frmb .form-field').size();
 
           $('label.field-label').html('Pergunta');
@@ -152,12 +153,26 @@ jQuery(document).on('ready page:load', function() {
           $(fld).append("<input type='hidden' name='questions[" + i + "][field_type_id]' value='" + type + "'/>");
         }
       }
-    },
-    defaultFields: [questionsAsDefault()]
+    }
   });
 
   $('button.form-builder-save').on('click', function() {
     $('form').submit();
   });
+
+  if (typeof questions !== 'undefined') {
+    for (var i in questions) {
+      var question = questions[i];
+      var i = $('.frmb .form-field').size() + 1;
+
+      if (question.field_type_id == 1) {
+        $('.icon-text-input').click();
+
+        $('.prev-holder input[type=text]').last().val(question.title);
+      }
+
+      $('ul.frmb .form-field').last().append("<input type='hidden' name='questions[" + i + "][id]' value='" + question.id + "' />");  
+    } 
+  }
 
 });
