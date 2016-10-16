@@ -6,4 +6,7 @@ class Lawyer < ActiveRecord::Base
   belongs_to :field_of_work
 
   has_many :forms
+
+  # validations
+  validates_presence_of :name, :email
 end
