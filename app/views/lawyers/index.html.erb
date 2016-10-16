@@ -1,33 +1,44 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
 
-<h1>Listing Lawyers</h1>
+    <div class="col-xs-12 page-header">
+      <div class="row">
+        <div class="col-xs-6">
+          <h1>Advogados</h1>
+        </div>
+        <div class="col-xs-6 text-right">
+          <%= link_to 'New Lawyer', new_lawyer_path, class: 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Oab</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Field of work</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <div class="col-xs-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Código OAB</th>
+            <th>E-mail</th>
+            <th>Área de Atuação</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
 
-  <tbody>
-    <% @lawyers.each do |lawyer| %>
-      <tr>
-        <td><%= lawyer.OAB %></td>
-        <td><%= lawyer.name %></td>
-        <td><%= lawyer.email %></td>
-        <td><%= lawyer.field_of_work %></td>
-        <td><%= link_to 'Show', lawyer %></td>
-        <td><%= link_to 'Edit', edit_lawyer_path(lawyer) %></td>
-        <td><%= link_to 'Destroy', lawyer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <tbody>
+          <% @lawyers.each do |lawyer| %>
+            <tr>
+              <td><%= lawyer.name %></td>
+              <td><%= lawyer.OAB %></td>
+              <td><%= lawyer.email %></td>
+              <td><%= lawyer.field_of_work %></td>
+              <td><%= link_to 'Show', lawyer %></td>
+              <td><%= link_to 'Edit', edit_lawyer_path(lawyer) %></td>
+              <td><%= link_to 'Destroy', lawyer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
 
-<br>
-
-<%= link_to 'New Lawyer', new_lawyer_path %>
+  </div>
+</div>

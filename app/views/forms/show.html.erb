@@ -1,14 +1,67 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+		
+		<div class="col-xs-12">
+			<%= link_to 'voltar para lista de formulários', forms_path, class: "page-back-link" %>
+		</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @form.name %>
-</p>
+    <div class="col-xs-12 page-header">
+      <div class="row">
+        <div class="col-xs-6">
+          <h1><%= @form.name %></h1>
+        </div>
+        <div class="col-xs-6 text-right">
+        	<%= link_to 'Editar', edit_form_path(@form), class: 'btn btn-default' %>
+          <%= link_to 'Enviar formulário para cliente', new_form_path, class: 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
 
-<p>
-  <strong>Lawyer:</strong>
-  <%= @form.lawyer %>
-</p>
+    <div class="col-xs-12 form-details-metrics">
+    	<div class="row">
+    		
+    		<div class="col-xs-4 col-sm-3 col-lg-2 text-center">
+    			<strong class="text-info">24</strong><br>
+    			<span class="text-muted">perguntas <br>no formulário</span>
+    		</div>
+    		
+    		<div class="col-xs-4 col-sm-3 col-lg-2 text-center">
+    			<strong class="text-info">26</strong><br>
+    			<span class="text-muted">clientes <br>que responderam</span>
+    		</div>
+    		
+    		<div class="col-xs-4 col-sm-3 col-lg-2 text-center">
+    			<strong class="text-info">10</strong><br>
+    			<span class="text-muted">horas de reunião<br>economizadas</span>
+    		</div>
+    	</div>
+    </div>
 
-<%= link_to 'Edit', edit_form_path(@form) %> |
-<%= link_to 'Back', forms_path %>
+    <div class="col-xs-12 form-responses-wrapper">
+    	<div class="row">
+    		<div class="col-xs-12">
+    			<hr>
+    			<br>
+    			<h2>Respostas</h2>
+    		</div>
+    		<div class="col-xs-12">
+		      <table class="table table-striped">
+		        <tbody>
+		        	<tr>
+		        		<td>
+		        			<a href="#">Maria da Silva Ribeiro</a>
+		        			<p>maria@live.com</p>
+		        		</td>
+		        		<td class="text-right">
+		        			<a href="#" class="btn btn-default">ver resposta</a>
+		        		</td>
+	        		</tr>
+		        </tbody>
+		      </table>
+    		</div>
+    	</div>
+
+    </div>
+
+  </div>
+</div>

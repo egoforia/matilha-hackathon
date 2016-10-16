@@ -1,0 +1,42 @@
+// 
+// mixins
+// 
+
+// 
+// font smoothing
+
+  @mixin font-smoothing {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+  }
+
+// 
+// transition
+// usage: @include transition(all, 0.2s, ease);
+
+ @mixin transition($type: all, $duration: 0.3s, $ease: ease-in-out) {
+    transition: $type $duration $ease; /* Standard */
+    -moz-transition: $type $duration $ease; /* Firefox 4 */
+    -webkit-transition: $type $duration $ease; /* Safari and Chrome */
+    -o-transition: $type $duration $ease; /* Opera */
+    -ms-transition: $type $duration $ease; /* IE */
+  }
+
+// 
+// responsive breakpoints
+// usage: @include breakpoint(xs)  { width: 100% ; }
+
+  @mixin breakpoint($media) {
+    @if $media == xs {
+      @media only screen and (max-width: $screen-xs-max) { @content; }
+    }
+    @else if $media == sm {
+      @media only screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { @content; }
+    }
+    @else if $media == md {
+      @media only screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) { @content; }
+    }
+    @else if $media == lg {
+      @media only screen and (min-width: $screen-lg-min) and (max-width: $screen-lg-max) { @content; }
+    }
+  }

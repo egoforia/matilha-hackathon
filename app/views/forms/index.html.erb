@@ -1,29 +1,34 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
 
-<h1>Listing Forms</h1>
+    <div class="col-xs-12 page-header">
+      <div class="row">
+        <div class="col-xs-6">
+          <h1>Formulários</h1>
+        </div>
+        <div class="col-xs-6 text-right">
+          <%= link_to 'Novo formulário', new_form_path, class: 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Lawyer</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <div class="col-xs-12">
+      <table class="table table-striped">
+        <tbody>
+          <% @forms.each do |form| %>
+            <tr>
+              <td>
+                <%= link_to form.name, form %>
+                <p>Formulário que qualifica clientes que fizeram primeiro contato com o escritório</p>
+              </td>
+              <td class="text-right"><%= link_to 'Ver formulário', form, class: 'btn btn-default' %></td>
+              <!-- <td><%#= link_to 'Edit', edit_form_path(form) %></td> -->
+              <!-- <td><%#= link_to 'Destroy', form, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
 
-  <tbody>
-    <% @forms.each do |form| %>
-      <tr>
-        <td><%= form.name %></td>
-        <td><%= form.lawyer %></td>
-        <td><%= link_to 'Show', form %></td>
-        <td><%= link_to 'Edit', edit_form_path(form) %></td>
-        <td><%= link_to 'Destroy', form, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Form', new_form_path %>
+  </div>
+</div>
