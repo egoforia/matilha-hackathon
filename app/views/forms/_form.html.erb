@@ -1,4 +1,17 @@
 <%= form_for(@form) do |f| %>
+  <div class="row">
+    <div class="col-sm-3">
+      <h3>Adicionar campos</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <div class="col-sm-9">
+      <h3>Formulário de perguntas</h3>
+    </div>
+    <div class="col-xs-12">
+      <div class="form-builder-wrapper" id="formBuilder"></div>
+    </div>
+  </div>
+
   <% if @form.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@form.errors.count, "error") %> prohibited this form from being saved:</h2>
@@ -12,14 +25,14 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%#= f.label :name %><br>
+    <%#= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :lawyer_id %><br>
-    <%= f.text_field :lawyer_id %>
+    <%#= f.label :lawyer_id %><br>
+    <%#= f.text_field :lawyer_id %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%#= f.submit %>
   </div>
 <% end %>

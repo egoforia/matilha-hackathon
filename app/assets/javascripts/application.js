@@ -12,7 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require turbolinks
 //= require_tree .
 //= require form-builder.js
 //= require form-render.js
+//= require jquery.noty.packaged.js
+//= require noty-bootstrap.js
