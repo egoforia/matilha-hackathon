@@ -16,8 +16,8 @@
 			</div>
 			<div class="col-xs-6 text-right">
 				<!-- <strong>Logged User</strong><br> -->
-				<%= link_to(destroy_lawyer_session_path, :method => :delete) do %>
-				<i class="fa fa-power-off fa-2x"></i> &nbsp;&nbsp;&nbsp; Sair
+				<%= link_to(destroy_lawyer_session_path, class:' btn btn-default logout-button', alt: 'Sair do aplicativo', :method => :delete) do %>
+				<i class="fa fa-power-off"></i> &nbsp;&nbsp; Sair
 				<% end%>
 			</div>
 		</div>
