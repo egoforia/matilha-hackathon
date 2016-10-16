@@ -12,7 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+<<<<<<< HEAD
 //= require jquery-ui
+=======
+//= require bootstrap-sprockets
+>>>>>>> 161f61475d95444903972974bd603a5effae6333
 //= require turbolinks
 //= require_tree .
 //= require form-builder.js

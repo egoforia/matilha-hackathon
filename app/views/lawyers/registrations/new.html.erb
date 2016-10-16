@@ -4,8 +4,18 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name, 'Nome' %><br />
     <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :OAB, 'OAB' %><br />
+    <%= f.text_field :OAB %>
+  </div>
+
+  <div class="field">
+    <%= f.label :field_of_work_id, 'Área de atuação' %><br />
+    <%= f.collection_select :field_of_work_id, FieldOfWork.all, :id, :title, {prompt: 'Escolha sua área de atuação'} %>
   </div>
 
   <div class="field">

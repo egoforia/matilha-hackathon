@@ -12,7 +12,9 @@ Rails.application.routes.draw do
 
   resources :field_types
 
-  resources :forms
+  resources :forms do
+    post 'send_email', to: 'forms#send_email'
+  end
 
   resources :lawyers
 
@@ -22,7 +24,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'forms#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
