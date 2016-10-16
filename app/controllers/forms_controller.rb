@@ -1,6 +1,6 @@
 class FormsController < ApplicationController
   before_action :authenticate_lawyer!
-  before_action :set_form, only: [:show, :edit, :update, :destroy]
+  before_action :set_form, only: [:show, :edit, :update, :destroy, :send_email]
 
   # GET /forms
   # GET /forms.json
@@ -62,6 +62,21 @@ class FormsController < ApplicationController
     end
   end
 
+  def send_email
+    respond_to do |format|
+      user = User.new(user_params)
+
+      if user.save
+        UserNotifier.send_form(user, @form).deliver_now
+        format.html { redirect_to @form, notice: 'Email enviado com sucesso' }
+        format.json { render :show, status: :ok, location: @form }
+      else
+        format.html { render :edit }
+        format.json { render json: @form.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_form
@@ -71,5 +86,10 @@ class FormsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def form_params
       params.require(:form).permit(:name, :lawyer_id)
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def user_params
+      params.require(:user).permit(:name, :email)
     end
 end

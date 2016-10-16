@@ -12,7 +12,7 @@
         </div>
         <div class="col-xs-6 text-right">
         	<%= link_to 'Editar', edit_form_path(@form), class: 'btn btn-default' %>
-          <%= link_to 'Enviar formulário para cliente', new_form_path, class: 'btn btn-primary' %>
+            <%= button_tag 'Enviar formulário para cliente', {class: 'btn btn-primary', data: {toggle: "modal", target: "#send-form-modal"}} %>
         </div>
       </div>
     </div>
@@ -63,5 +63,36 @@
 
     </div>
 
+  </div>
+</div>
+
+<!-- send form modal -->
+<div class="modal fade" id="send-form-modal" tabindex="-1" role="dialog" aria-labelledby="send-form-modal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <%= form_for(:user, url: form_send_email_path(@form)) do |f| %>  
+            <%= hidden_field_tag 'id', @form.id %> 
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="send-form-modalLabel">Enviar formulário por email</h4>
+          </div>
+          <div class="modal-body">
+              <div class="field">
+                <%= f.label :name %><br>
+                <%= f.text_field :name %>
+              </div>
+              <div class="field">
+                <%= f.label :email %><br>
+                <%= f.text_field :email %>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <%= f.submit 'Enviar' %>
+          </div>
+        <% end %>
+    </div>
   </div>
 </div>

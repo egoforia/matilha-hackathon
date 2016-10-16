@@ -12,7 +12,9 @@ Rails.application.routes.draw do
 
   resources :field_types
 
-  resources :forms
+  resources :forms do
+    post 'send_email', to: 'forms#send_email'
+  end
 
   resources :lawyers
 
