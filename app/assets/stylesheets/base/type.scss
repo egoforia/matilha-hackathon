@@ -1,39 +1,38 @@
 // 
 // type settings
 
-// $brandon:		'brandon-text', helvetica, arial, sans-serif;
-// $text		:		$brandon;
+$type: $roboto;
+$title: $roboto;
+$text: $roboto;
 
-// // 
-// // general type styles
+// 
+// general type styles
 
-// 	h1, h2, h3, h4, h5, h6 {
-// 		font-family: $text;
-// 	}
+	* {
+		font-family: $text;
+		@include font-smoothing();
+	}
 
-// 	p {
-// 		font-size: 15px;
-// 		color: #444;
-// 		line-height: 22px;
-// 	}
+	h1, h2, h3, h4, h5, h6 {
+		font-family: $text;
+		color: $navy-blue;
+	}
 
-// 	.text-primary {
-// 		color: $primary-color;
-// 	}
-	
-// 	.text-secondary {
-// 		color: $secondary-color;
-// 	}
+	p {
+		font-size: 16px;
+		color: $text-color;
+		line-height: 150%;
+	}
 
-// 	a {
-// 		color: $purple;
-// 		font-weight: bold;
-// 		text-decoration: none;
+	a {
+		color: $blue;
+		font-weight: 500;
+		text-decoration: none;
 
-// 		&:hover {
-// 			color: $cyan;
-// 			text-decoration: none;
-// 		}
-// 	}
+		&:hover {
+			color: $navy-blue;
+			text-decoration: none;
+		}
+	}
 
 
