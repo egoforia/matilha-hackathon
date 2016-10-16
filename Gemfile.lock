@@ -204,11 +204,8 @@ DEPENDENCIES
   font-awesome-sass
   jbuilder (~> 2.0)
   jquery-rails
-<<<<<<< HEAD
   jquery-ui-rails
-=======
   letter_opener
->>>>>>> 161f61475d95444903972974bd603a5effae6333
   mysql2 (= 0.3.20)
   paperclip (~> 5.0.0)
   rails (= 4.2.0)
