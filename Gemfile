@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use mysql as the database for Active Record
-gem 'mysql2', '~> 0.3.20'
+gem 'mysql2', '0.3.20'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -34,8 +34,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
 
-# upload de imagens
-gem 'paperclip'
+# upload de arquivos
+gem "paperclip", "~> 5.0.0"
 gem 'aws-sdk'
 
 group :development, :test do
@@ -47,5 +47,7 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  gem 'dotenv-rails'
 end
 
