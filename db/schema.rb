@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20161016001704) do
+=======
+ActiveRecord::Schema.define(version: 20161016031629) do
+>>>>>>> e975e1bdbdd00c477b79e1bf2f77d8d8ec589ff0
 
   create_table "answers", force: :cascade do |t|
     t.integer  "user_id",            limit: 4,     null: false
@@ -98,9 +102,13 @@ ActiveRecord::Schema.define(version: 20161016001704) do
   add_index "questions", ["jump_logic_question_option_id"], name: "index_questions_on_jump_logic_question_option_id", using: :btree
 
   create_table "uploads", force: :cascade do |t|
-    t.string   "file",       limit: 255, null: false
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "file",              limit: 255
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.string   "file_file_name",    limit: 255
+    t.string   "file_content_type", limit: 255
+    t.integer  "file_file_size",    limit: 4
+    t.datetime "file_updated_at"
   end
 
   create_table "users", force: :cascade do |t|
