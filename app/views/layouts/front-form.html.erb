@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Nice Start</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="container">
+	<div class="row front-form-wrapper">
+		<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+			<div class="row">
+				<%= yield %>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="main-footer">
+	<div class="container">
+		<div class="row text-center">
+			<div class="col-xs-12">
+				<p class="text-center text-muted">Formulário desenvolvido com <a href="http://nicestart.com.br">nice start</a></p>
+				<a href="/forms" class="logotype-symbol">Nice Start</a>
+			</div>
+		</div>
+	</div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+// 
+// front form styles
+
+
+	.front-form-wrapper {
+		margin-top: 90px;
+	}
+	
+	// form header
+	.form-header-wrapper {
+		text-align: center !important;
+		margin-bottom: 40px;
+	}
+
+	.form-header__title {
+		font-size: 32px;
+		color: $blue;
+		display: block;
+	}
+
+	.form-header__description {
+		display: block;
+		font-size: 19px;
+		color: $text-color;
+	}
+	
+	// questions
+	.form-question-block {
+		margin-top: 20px;
+	}
+
+	.form-question__title {
+		font-size: 22px;
+		font-weight: normal;
+		color: $navy-blue;
+	}
+	
+	.form-question__description {
+		font-size: 16px;
+		font-weight: normal;
+		color: $navy-blue;
+	}
+
+
+	.form-question-block .form-group {
+		margin-bottom: 30px;
+	}
+
+	// 
+	// input types
+
+	// checkbox
+	.form-question-block .checkbox {
+		border: 1px solid #ddd;
+		border-radius: 3px;
+		width: 45%;
+		font-size: 16px;
+		color: $text-color;
+		font-weight: 500 !important;
+		display: inline-block;
+		margin-right: 10px;
+		margin-bottom: 20px;
+
+		@extend .transition--fast;
+
+		label {
+			display: block;
+			padding: 10px 20px;
+			margin-left: 20px;
+			text-indent: 10px;
+		}
+
+		input {
+			position: relative;
+			left: -10px;
+		}
+
+		&:hover {
+			border: 1px solid $blue !important;
+			background: lighten($blue, 47%) !important;
+		}
+	}
+
+	// upload
+	.form-question-block .file-input {
+		margin-top: 10px;
+	}
+
+	.form-question-block .file-caption {
+		display: none;
+		width: 90%;
+		margin-top: 5px;
+	}
+
+
+	// 
+	// form footer
+
+	.form-footer-wrapper {
+		margin: 50px 0 120px;
+	}

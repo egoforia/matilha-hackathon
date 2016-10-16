@@ -17,4 +17,6 @@
 //= require form-builder.js
 //= require form-render.js
 //= require jquery.noty.packaged.js
+//= require fileinput.js
+//= require fileinput-pt-BR.js
 //= require_tree .

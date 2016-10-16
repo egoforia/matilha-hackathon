@@ -5,6 +5,7 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "fileinput";
 
 // vendor
 @import "form-builder";
@@ -23,3 +24,4 @@
 // page/modules styles
 @import "pages/general";
 @import "pages/login";
+@import "pages/front-form";
