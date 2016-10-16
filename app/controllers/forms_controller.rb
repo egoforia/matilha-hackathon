@@ -55,6 +55,11 @@ class FormsController < ApplicationController
   def update
     respond_to do |format|
       if @form.update(form_params)
+        params[:questions].each do |i, question_param|
+          question = Question.find question_param[:id]
+          question.update_attributes(questions_params(i).except(:id))
+        end
+
         format.html { redirect_to @form, notice: 'Form was successfully updated.' }
         format.json { render :show, status: :ok, location: @form }
       else
@@ -107,6 +112,6 @@ class FormsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def questions_params(i)
-      params.require(:questions).require(i.to_s.to_sym).permit(:title, :field_type_id)
+      params.require(:questions).require(i.to_s.to_sym).permit(:id, :title, :field_type_id)
     end
 end

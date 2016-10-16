@@ -6,21 +6,6 @@
         return types[i].id;
   };
   var questions = <%= raw @form.questions.to_json %>;
-
-  var questionsAsDefault = function() {
-    var defaults = []
-
-    for (var i in questions) {
-      var question = questions[i];
-
-      defaults.push({
-        label: "Pergunta",
-        name: 'questions[' + i + '][title]',
-        type: "text",
-        value: question.title
-      });
-    }
-  };
 </script>
 
 <%= form_for(@form) do |f| %>
