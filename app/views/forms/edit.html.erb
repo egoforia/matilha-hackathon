@@ -11,8 +11,7 @@
           <h1><%= @form.name %></h1>
         </div>
         <div class="col-xs-6 text-right">
-          <%= link_to 'Salvar & Visualizar', @form, class: 'btn btn-default' %>
-          <%= link_to 'Salvar', new_form_path, class: 'btn btn-primary' %>
+          <button class="btn btn-primary" onClick="$('form').submit();">Salvar</button>
         </div>
       </div>
     </div>

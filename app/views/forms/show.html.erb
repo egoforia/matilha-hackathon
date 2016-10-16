@@ -51,9 +51,9 @@
               <% @form.users.each do |user| %>
                 <tr>
                   <td>
-                    <%= link_to user.name, form_user_path(@form, user), class: 'text-md' %>
+                    <%= link_to user.name, form_success_path(@form, user), class: 'text-md' %>
                   </td>
-                  <td class="text-right"><%= link_to 'Ver formulário', form_user_path(@form, user), class: 'btn btn-default' %></td>
+                  <td class="text-right"><%= link_to 'Ver respostas', form_success_path(@form, user), class: 'btn btn-default' %></td>
                 </tr>
               <% end %>
               <% if @form.users.blank? %>

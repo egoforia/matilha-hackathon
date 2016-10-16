@@ -16,6 +16,10 @@
 	display: block !important;
 }
 
+.form-group.description-wrap, .form-group.className-wrap, .form-group.name-wrap, .form-group.access-wrap, .form-group.other-wrap, .form-group.placeholder-wrap, .form-group.subtype-wrap, .form-group.required-wrap, .form-group.value-wrap, .form-group.maxlength-wrap {
+	display: none;
+}
+
 // 
 // table
 	.table {
